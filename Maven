@@ -1,0 +1,38 @@
+# Maven
+
+maven :  管理项目之间引用的工具,主要用于应用程序构建，依赖管理和项目管理，jar包依赖的管理
+maven也是自动化构建工具，可以运用一个指令完成 : java源码-->编译-->测试-->测试报告-->打包-->部署
+
+Maven的本质是一个项目管理工具，将项目开发和管理过程抽象成一个项目对象模型（POM）
+POM：项目对象模型
+
+POM项目对象：模型在idea建立一个项目之后，Maven通过扫描pom.xml这个配置文件就可以知道该项目信息，可以说pom.xml代表一个项目
+依赖管理：项目对象里面用什么东西可以靠依赖管理来实现
+本地仓库：依赖管理所要用到的资源在本地仓库
+私服仓库：保存公共信息
+中央仓库：私服中的东西从中央仓库拿
+
+逻辑图：
+pom.xml--->项目对象模型(POM)<--->依赖管理--->本地--->私服--->中央
+
+## 基本概念
+
+1.仓库：用于存储资源，包含各种jar包(本地仓库，私服，中央仓库)
+2.坐标：要查jar的资源时，通过坐标查找，然后就可以使用
+<组织ID>groupld：定义当前Maven项目隶属组织名称（通常是域名反写，例如org.mybatis）
+<项目ID>artifactld：定义Maven项目名称
+<版本号>version：定义当前版本号
+
+## 在IDEA下的Maven项目
+
+创建完Maven项目后，要引入Maven工程必要的jar包引入：
+必要的依赖：
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+    </dependencies>
+
+Tip：JUint是Java编程语言的单元测试框架，用于编写和运行可重复的自动化测试。
